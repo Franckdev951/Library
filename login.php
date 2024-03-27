@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -9,24 +10,29 @@ try {
 } catch (PDOException $e) {
     echo "Erreur :" . $e->getMessage();
 }
-// Create a new user
-if (isset($_POST['submit'])) {
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $motDePasse = $_POST['motDePasse'];
+    if ($email != "" && $motDePasse != "") {
+        $requete = $bdd->query("SELECT * FROM utilisateur WHERE email = '$email' AND motDePasse = '$motDePasse'");
+        // Verify the password
+        $requete = $bdd->query("SELECT * FROM utilisateur WHERE email = '$email'");
+        $result = $requete->fetch();
+        if ($result && password_verify($motDePasse, $result['motDePasse'])) {
+            echo "Connexion réussie";
+        } else {
+            echo "Erreur lors de la connexion";
+        }
 
-    $requete = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, email, motDePasse) VALUES (:nom, :prenom, :email, :motDePasse)");
-    $requete->bindParam(':nom', $nom);
-    $requete->bindParam(':prenom', $prenom);
-    $requete->bindParam(':email', $email);
-    $requete->bindParam(':motDePasse', $motDePasse);
-
-    try {
-        $requete->execute();
-        echo "Inscription réussie";
-    } catch (PDOException $e) {
-        echo "Erreur lors de l'inscription : " . $e->getMessage();
+        // $result = $requete->fetch();
+        // if ($result['ID'] != false) {
+        //     echo "Connexion réussie";
+        // } else {
+        //     echo "Erreur lors de la connexion";
+        // }
+    } else {
+        echo "Veuillez remplir tous les champs";
     }
 }
 

@@ -19,6 +19,13 @@ if (isset($_POST['submit'])) {
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
     $motDePasse = $_POST['motDePasse'];
+    $corfirmMdp = $_POST['confirmMotDePasse'];
+    if ($motDePasse != $corfirmMdp) {
+        echo "Les mots de passe ne correspondent pas";
+        return;
+    } else {
+        $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
+    }
 
     $requete = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, email, motDePasse) VALUES (:nom, :prenom, :email, :motDePasse)");
     $requete->bindParam(':nom', $nom);

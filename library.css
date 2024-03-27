@@ -1,14 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("unsplash.jpg");
+  background-image: url("bibliotheque.jpg");
   background-size: cover;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(15.2px);
-  -webkit-backdrop-filter: blur(12.2px);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
 }
 
 form {
@@ -18,7 +23,7 @@ form {
   padding: 10px;
   box-shadow: 100 0 10 rgba(0, 0, 0, 1);
   /* From https://css.glass */
-  background: rgba(33, 62, 189, 0.54);
+  background: rgba(89, 89, 89, 0.54);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.43);
   color: white;
