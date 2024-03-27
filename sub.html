@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inscription</title>
+    <link rel="stylesheet" href="library.css" />
+  </head>
+  <body>
+    <form method="post" action="signUp.php">
+      <h1>INSCRIVEZ-VOUS</h1>
+      <hr />
+      <div class="nom-prenom">
+        <div>
+          <label for="name">Nom</label>
+          <input name="nom" type="text" required />
+        </div>
+        <div>
+          <label for="firstname">Prénom</label>
+          <input name="prenom" type="text" required />
+        </div>
+      </div>
+      <label for="email">email</label>
+      <input type="email" name="email" required />
+      <label for="password">mot de passe</label>
+      <input type="password" name="motDePasse" required />
+      <input type="submit" name="submit" value="S'inscrire" />
+      <p>
+        Vous avez déjà un compte ? <a href="connect.html">Connectez-Vous</a>
+      </p>
+    </form>
+  </body>
+</html>
