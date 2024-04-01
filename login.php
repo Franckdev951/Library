@@ -36,43 +36,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+
+
 class Utilisateur
 {
     private $nom;
-    private $prenom;
     private $email;
+    private $motDePasse;
 
-    public function __construct($nom, $prenom, $email)
+    public function __construct($nom, $email, $motDePasse)
     {
         $this->nom = $nom;
-        $this->prenom = $prenom;
         $this->email = $email;
+        $this->motDePasse = $motDePasse;
     }
 
-    // Getters and Setters for each property
-    // ...
+    public function inscription()
+    {
+        // Logique pour enregistrer l'utilisateur dans la base de données, par exemple
+        echo "L'utilisateur $this->nom s'est inscrit avec l'adresse email $this->email.";
+    }
+
+    public function connexion()
+    {
+        // Logique pour vérifier les informations de connexion et autoriser l'accès, par exemple
+        echo "L'utilisateur $this->nom s'est connecté.";
+    }
 }
 
 class Livre
 {
     private $titre;
     private $auteur;
-    private $isbn;
+    private $annee;
 
-    public function __construct($titre, $auteur, $isbn)
+    public function __construct($titre, $auteur, $annee)
     {
         $this->titre = $titre;
         $this->auteur = $auteur;
-        $this->isbn = $isbn;
+        $this->annee = $annee;
     }
 
-    // Getters and Setters for each property
-    // ...
-}
-// Crée une instance des classes
-$user = new Utilisateur("Doe", "John", "john.doe@example.com");
-$book = new Livre("The Great Book", "John Doe", "123-4567890123");
+    public function afficherDetails()
+    {
+        echo "Titre: $this->titre | Auteur: $this->auteur | Année: $this->annee";
+    }
 
-// Use the objects
-// echo "User: " . $user->getNom() . " " . $user->getPrenom() . ", Email: " . $user->getEmail();
-// echo "Book: " . $book->getTitre() . " by " . $book->getAuteur() . ", ISBN: " . $book->getIsbn();
+    // Autres méthodes pour les livres peuvent être ajoutées ici
+}
+
+// Exemple d'utilisation
+$utilisateur1 = new Utilisateur($nom, $email, $motDePasse);
+$utilisateur1->inscription(); // Appel de la méthode inscription
+echo "<br>";
+$utilisateur1->connexion(); // Appel de la méthode connexion
+echo "<br>";
+
+$livre1 = new Livre($titre, $auteur, $annee);
+$livre1->afficherDetails(); // Appel de la méthode afficherDetails

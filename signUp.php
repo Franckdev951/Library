@@ -27,6 +27,7 @@ if (isset($_POST['submit'])) {
         $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
     }
 
+
     $requete = $bdd->prepare("INSERT INTO utilisateur (nom, prenom, email, motDePasse) VALUES (:nom, :prenom, :email, :motDePasse)");
     $requete->bindParam(':nom', $nom);
     $requete->bindParam(':prenom', $prenom);
