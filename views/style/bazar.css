@@ -1,0 +1,278 @@
+.hoverY img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+  
+  
+.hoverY{
+    display: flex;
+    border-radius: 4px;
+    background : transparent;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 13px;
+    /* padding: 16px; */
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    justify-content: center;
+    position: relative;
+    text-transform: uppercase;
+    align-items: center;
+}
+   
+.hoverY span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+   
+.hoverY span:after {
+    position: relative;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+
+#btnHome span:after{
+    content: 'Home';
+}
+#btnIndex span:after{
+    content: 'Livre';
+}
+#btnSignUp span:after{
+    content: 'Sign Up';
+}
+#btnLogin span:after{
+    content: 'Login';
+}
+ 
+.hoverY:hover span {
+    padding-right: 15px;
+}
+   
+.hoverY:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+  
+.hoverY:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffc506;
+    transition: 0.5s ease;
+}
+  
+.hoverY:hover {
+    color: #1e1e2b;
+    transition-delay: 0.5s;
+}
+  
+.hoverY:hover::before {
+    width: 100%;
+}
+  
+.hoverY:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #ffc506;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+  
+.hoverY:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+
+#btn2{
+    width: 8rem;
+    height: 3rem;
+}
+
+
+
+.search-bar{
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.search-bar button {
+    border: none;
+    background: none;
+    color: #8b8ba7;
+}
+  /* styling of whole input container */
+.search {
+    --timing: 0.3s;
+    --width-of-input: 200px;
+    --height-of-input: 40px;
+    --border-height: 2px;
+    --input-bg: #fff;
+    --border-color: #ffc506;
+    --border-radius: 30px;
+    --after-border-radius: 1px;
+    position: relative;
+    width: 30rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding-inline: 0.8em;
+    border-radius: var(--border-radius);
+    transition: border-radius 0.5s ease;
+    background: var(--input-bg,#fff);
+    outline: none;
+    background-color: #f0f0f2;
+  
+}
+  /* styling of Input */
+.search-input {
+    font-size: 0.9rem;
+    background-color: transparent;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    width: 30rem;
+    height: 2rem;
+    
+}
+  /* styling of animated border */
+.search:before {
+    content: "";
+    position: absolute;
+    background: var(--border-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: var(--border-height);
+    left: 0;
+    bottom: 0;
+    border-radius: 1px;
+    transition: transform var(--timing) ease;
+}
+  /* Hover on Input */
+.search:focus-within {
+    border-radius: var(--after-border-radius);
+}
+  
+.search-input:focus {
+    outline: none;
+}
+  /* here is code of animated border */
+.search:focus-within:before {
+    transform: scale(1);
+}
+  /* styling of close button */
+  /* == you can click the close button to remove text == */
+.reset {
+    border: none;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+    width: 20px;
+}
+  /* close button shown when typing */
+.search-input:not(:placeholder-shown) ~ .reset {
+    opacity: 1;
+    visibility: visible;
+}
+  /* sizing svg icons */
+.search svg {
+    width: 17px;
+    margin-top: 3px;
+}
+
+.fav{
+    width: 120px;
+    height: 2rem;
+    cursor: pointer;
+
+}
+.fav {
+    font-size: 12px;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #ffedd3;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.fav::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffc506;
+    transition: 0.5s ease;
+}
+  
+.fav:hover::before {
+    width: 100%;
+}
+
+.submit{
+    width: 90px;
+    height: 2rem;
+    cursor: pointer;
+
+}
+.submit {
+    font-size: 12px;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #ffedd3;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.submit::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffc506;
+    transition: 0.5s ease;
+}
+  
+.submit:hover::before {
+    width: 100%;
+}
+  
+  
+  
+

@@ -31,9 +31,7 @@ h1 {
 }
 
 
-
 /* NAV BAR */
-
 nav {
     position: fixed;
     width: 100vw;
@@ -46,9 +44,9 @@ nav {
     -webkit-backdrop-filter: blur(10.4px);
     display: flex;
     align-items: center;
+    justify-content: space-around;
     
 }
-  
 
 nav ul {
     display: flex;
@@ -56,9 +54,7 @@ nav ul {
     justify-content: end;
     margin-right: 2rem;
 }
-  
 
-  
 nav ul li {
     margin-left: 1rem;
 }
@@ -67,21 +63,8 @@ li {
     list-style-type: none;
 }
 
-nav img{
-    width: 2rem;
-    height: 2rem;
-
-}
-
 
 /* HOME PAGE */
-
-
-.home-livre{
-    width: 15rem;
-    height: 15rem;
-}
-
 .home{
     display: flex;
     flex-direction: column;
@@ -93,33 +76,24 @@ nav img{
 
 
 
-
 /* LIVRE PAGE */
-.fav, .submit {
-    color: white;
-    background-color: #0e63a3;
-    padding: 6px 6px;
-    width: 6rem;
-    border: solid 1px #0e63a3;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
-}
 
-ul {
+
+
+.list {
+    padding-top: 5rem;
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(4, 17rem);
 }
 
-.search-input {
-    color:#0e63a3;
-    width: 20rem;
-    padding: 6px 6px;
-    border: solid 1px #0e63a3;
-    border-radius: 6px;
-}
+
 
 .livre {
     padding-top: 5rem;
 }
+
+
+
+
+
