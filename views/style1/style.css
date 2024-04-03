@@ -1,0 +1,333 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    padding: 5rem;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+button {
+    height: 2rem;
+    background-color: darkslategrey;
+    color: white;
+    border: 1px darkslategray solid;
+    padding-left: 0.2rem;
+    border-radius: 6px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgrey;
+    font-size: 1rem;
+}
+
+/* PAGE DES PRODUITS  */
+
+.product {
+    padding: 1rem;
+    border: solid 1px lightgray;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+    -moz-box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+    box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+}
+
+.avatar, .product-img, .home-img {
+    width: 200px;
+    height: 250px;
+    margin-bottom: 2rem;
+}
+
+.product h3 {
+    height: 40px;
+}
+
+.product .description {
+    height: 30px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 4rem;
+    column-gap: 1rem;
+}
+
+/* NAVBAR  */
+
+
+nav {
+    position: fixed;
+    width: 100vw;
+    height: 4rem;
+    top: 0;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.44);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+}
+
+.title-nav {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.burger-btn {
+    width: 2rem;
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    margin-right: 2rem;
+    top:0.5rem;
+    position: fixed;
+    left: -15rem;
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+    z-index:0;
+}
+
+.cart-btn {
+    top: 1.2rem;
+    width: 1.5rem;
+    position: fixed;
+    right: 1rem;
+}
+
+.open {
+    left: 1rem;
+    opacity: 1;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+
+/* STYLE DE LA HOMEPAGE */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-croco {
+    width: 23rem;
+    height: 23rem;
+}
+
+.button2 {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 1em 1.7em;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  }
+  
+  .button2:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+  
+  .button2:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: darkslategray;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:hover {
+    color: #ffffff;
+    border: 1px solid darkslategray;
+  }
+  
+  .button2:hover:before {
+    top: -35%;
+    background-color: darkslategray;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button2:hover:after {
+    top: -45%;
+    background-color: darkslategray;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+
+/* PAGE DE CONTACT  */
+
+.contact-form, .signup-form, .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input, textarea {
+    width: 20rem;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+    height: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid darkgray;
+    padding-left: 0.2rem;
+} 
+
+input[type="submit"] {
+    cursor: pointer;
+    width: 20.5rem;
+    height: 2rem;
+    background-color: darkslategrey;
+    color: white;
+    border: 1px darkslategray solid;
+}
+
+.contact-form textarea {
+    height: 10rem;
+}
+
+.contact-form label {
+    text-align: left;
+}
+
+.error {
+    text-align: center;
+    color: red;
+}
+
+
+/* CART  */
+
+
+.delete-btn {
+    background-color: brown;
+    color: white;
+}
+
+
+/* PROFILE PAGE  */
+
+.avatar {
+    width: 8.5rem;
+    height: 9rem;
+    border-radius: 100%;
+}
+
+.profile-card {
+    width: 50rem;
+    height: 25rem;
+    margin: auto;
+    display: flex;
+    -webkit-box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+    -moz-box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+    box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+    border-radius: 20px;
+}
+
+.profile-card section {
+    display: flex;
+}
+
+.left {
+    background: linear-gradient(90deg, darkslategrey 0%, darkgray 100%);
+    width: 15rem;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.right {
+    width: 35rem;
+    padding: 1.5rem;
+}
+
+.right div {
+    width: 17.5rem;
+}
+
+.email, .phone {
+    display: block;
+}

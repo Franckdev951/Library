@@ -24,7 +24,6 @@ favBtn.addEventListener('click', () => {
     // Afficher les livres favoris
     displayBooks(favsArray);
 });
-
 function displayBooks(books) {
     list.innerHTML = "";
 
@@ -36,18 +35,17 @@ function displayBooks(books) {
                 const title = book.volumeInfo.title;
                 const authors = book.volumeInfo.authors
                 const date = book.volumeInfo.publishedDate;
-                const description = book.searchInfo.textSnippet
                 const img = book.volumeInfo.imageLinks.thumbnail;
 
                 const li = document.createElement('li');
 
                 if (book.fav === true) {
+                    li.classList.add('book-fav');
                     li.innerHTML = `
-                    <li id=${bookId}>
+                    <li classid=${bookId}>
                         <h2>${title}</h2>
                         <h3>${authors}</h3>
                         <img src=${img}>
-                        <h3>${description}</h3>
                         <h3>${date}</h3>
                         <button class="delFavBtn">Supprimer des favoris</button>
                     </li>`;
@@ -57,7 +55,6 @@ function displayBooks(books) {
                         <h2>${title}</h2>
                         <h3>${authors}</h3>
                         <img src=${img}>
-                        <h3>${description}</h3>
                         <h3>${date}</h3>
                         <button class="addFavBtn">Ajouter aux favoris</button>
                     </li>`;
@@ -70,8 +67,7 @@ function displayBooks(books) {
                             bookId: id,
                             volumeInfotitle : title,
                             authors: authors,
-                            thumbnail: img,
-                            textSnippet: description,   
+                            thumbnail: img,   
                             publishedDate: date,
                             fav: true
                         };
